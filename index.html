@@ -9,6 +9,12 @@
 <body>
   <h2>Gerador de Comentários e Tarefas Jira</h2>
   <div class="section">
+    <label for="teamSelect">Time:</label>
+    <select id="teamSelect" onchange="loadTeamData()">
+      <option value="HCMCOL">HCMCOL - Admissão Digital</option>
+      <option value="HCMON">HCMON - Onboarding</option>
+    </select>
+
     <label for="templateCategory">Categoria de Template:</label>
     <select id="templateCategory" onchange="updateTemplateOptions()">
       <option value="comment">Templates de Comentários</option>
