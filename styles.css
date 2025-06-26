@@ -90,3 +90,44 @@ button:hover {
 .env-branch input[type="text"] {
     flex: 1;
 }
+
+/* Estilos para os campos inválidos */
+.invalid-field {
+    border: 2px solid #e74c3c !important;
+    background-color: #ffeaea;
+}
+
+/* Mensagem de erro */
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: normal;
+}
+
+/* Container para input com botão N/A */
+.input-with-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.input-with-buttons textarea,
+.input-with-buttons input[type="text"] {
+    flex: 1;
+}
+
+/* Estilo para botão N/A */
+.na-button {
+    background: #95a5a6;
+    padding: 5px 10px;
+    margin-top: 0;
+    height: 32px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.na-button:hover {
+    background: #7f8c8d;
+}

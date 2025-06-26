@@ -172,6 +172,116 @@ function getTemplateDisplayName(type) {
   return displayNames[type] || type;
 }
 
+// Função para validar se todos os campos obrigatórios foram preenchidos
+function validateFields() {
+  const type = document.getElementById("type").value;
+  const templateFields = templates[type] || [];
+  let isValid = true;
+  let firstInvalidField = null;
+
+  // Remover mensagens de erro anteriores
+  document.querySelectorAll('.error-message').forEach(el => el.remove());
+
+  templateFields.forEach(field => {
+    if (field.readonly) return; // Campos somente leitura não precisam de validação
+
+    if (field.type === "textarea" || field.type === "text") {
+      const input = document.getElementById(field.id);
+      if (!input.value.trim()) {
+        isValid = false;
+        if (!firstInvalidField) firstInvalidField = input;
+
+        // Adicionar mensagem de erro e estilo
+        const errorMsg = document.createElement("div");
+        errorMsg.className = "error-message";
+        errorMsg.textContent = "Campo obrigatório";
+        input.classList.add("invalid-field");
+        input.parentNode.appendChild(errorMsg);
+      } else {
+        input.classList.remove("invalid-field");
+      }
+    } else if (field.type === "boolean") {
+      const checked = document.querySelector(`input[name='${field.id}']:checked`);
+      if (!checked) {
+        isValid = false;
+        const radioGroup = document.querySelector(`.radio-options[name='${field.id}']`) ||
+                          document.querySelector(`.radio-options`);
+        if (!firstInvalidField && radioGroup) firstInvalidField = radioGroup;
+
+        // Adicionar mensagem de erro
+        const errorMsg = document.createElement("div");
+        errorMsg.className = "error-message";
+        errorMsg.textContent = "Selecione uma opção";
+        const container = document.querySelector(`input[name='${field.id}']`).closest('.boolean-group');
+        container.appendChild(errorMsg);
+      }
+    } else if (field.type === "env") {
+      const envChecked = document.querySelector('.env-branch input[type=checkbox]:checked');
+      if (!envChecked) {
+        isValid = false;
+        if (!firstInvalidField) firstInvalidField = document.querySelector('.env-branch');
+
+        // Adicionar mensagem de erro
+        const errorMsg = document.createElement("div");
+        errorMsg.className = "error-message";
+        errorMsg.textContent = "Selecione pelo menos um ambiente";
+        const container = document.querySelector('.env-branch').closest('.field-container');
+        container.appendChild(errorMsg);
+      } else {
+        // Verificar se todos os ambientes selecionados têm branch informada
+        document.querySelectorAll('.env-branch input[type=checkbox]:checked').forEach(checkbox => {
+          const input = checkbox.parentElement.nextElementSibling;
+          if (!input.value.trim()) {
+            isValid = false;
+            if (!firstInvalidField) firstInvalidField = input;
+
+            input.classList.add("invalid-field");
+            // Adicionar mensagem de erro
+            const errorMsg = document.createElement("div");
+            errorMsg.className = "error-message";
+            errorMsg.textContent = "Informe a branch";
+            input.parentNode.appendChild(errorMsg);
+          } else {
+            input.classList.remove("invalid-field");
+          }
+        });
+      }
+    } else if (field.type === "checkbox" && field.options) {
+      const checked = document.querySelector(`input[name='${field.id}']:checked`);
+      if (!checked) {
+        isValid = false;
+        if (!firstInvalidField) firstInvalidField = document.querySelector(`input[name='${field.id}']`);
+
+        // Adicionar mensagem de erro
+        const errorMsg = document.createElement("div");
+        errorMsg.className = "error-message";
+        errorMsg.textContent = "Selecione pelo menos uma opção";
+        const container = document.querySelector(`input[name='${field.id}']`).closest('.field-container');
+        container.appendChild(errorMsg);
+      }
+    }
+  });
+
+  // Rolar até o primeiro campo inválido
+  if (firstInvalidField) {
+    firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    firstInvalidField.focus();
+  }
+
+  return isValid;
+}
+
+// Função para preencher campo com N/A
+function fillWithNA(fieldId) {
+  const input = document.getElementById(fieldId);
+  if (input) {
+    input.value = "N/A";
+    input.classList.remove("invalid-field");
+    const errorMsg = input.parentNode.querySelector('.error-message');
+    if (errorMsg) errorMsg.remove();
+  }
+}
+
 // Função para atualizar o formulário com base no tipo selecionado
 function updateForm() {
   const type = document.getElementById("type").value;
@@ -188,21 +298,27 @@ function updateForm() {
       const div = document.createElement("div");
       div.className = "field-container";
       div.innerHTML = `<label for="${field.id}">${field.label}</label>
-                      <textarea id="${field.id}" ${field.readonly ? 'readonly' : ''}>${field.defaultValue || ''}</textarea>`;
+                      <div class="input-with-buttons">
+                        <textarea id="${field.id}" ${field.readonly ? 'readonly' : ''}>${field.defaultValue || ''}</textarea>
+                        ${field.readonly ? '' : '<button type="button" class="na-button" onclick="fillWithNA(\'' + field.id + '\')">N/A</button>'}
+                      </div>`;
       container.appendChild(div);
     }
     else if (field.type === "text") {
       const div = document.createElement("div");
       div.className = "field-container";
       div.innerHTML = `<label for="${field.id}">${field.label}</label>
-                      <input type="text" id="${field.id}" ${field.readonly ? 'readonly' : ''} value="${field.defaultValue || ''}">`;
+                      <div class="input-with-buttons">
+                        <input type="text" id="${field.id}" ${field.readonly ? 'readonly' : ''} value="${field.defaultValue || ''}">
+                        ${field.readonly ? '' : '<button type="button" class="na-button" onclick="fillWithNA(\'' + field.id + '\')">N/A</button>'}
+                      </div>`;
       container.appendChild(div);
     }
     else if (field.type === "boolean") {
       const div = document.createElement("div");
       div.className = "boolean-group";
       div.innerHTML = `<label>${field.label}</label>
-                      <div class="radio-options">
+                      <div class="radio-options" name="${field.id}">
                         <label><input type="radio" name="${field.id}" value="Sim"> Sim</label>
                         <label><input type="radio" name="${field.id}" value="Não"> Não</label>
                       </div>`;
@@ -252,6 +368,12 @@ function toggleBranchInput(checkbox) {
 
 // Função para gerar o output formatado para o Jira
 function generateOutput() {
+  // Validar os campos antes de gerar o output
+  if (!validateFields()) {
+    alert("Por favor, preencha todos os campos obrigatórios.");
+    return;
+  }
+
   const category = document.getElementById("templateCategory").value;
   const type = document.getElementById("type").value;
   const mentions = Array.from(document.querySelectorAll('#mentions input:checked'))
