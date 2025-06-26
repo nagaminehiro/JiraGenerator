@@ -294,24 +294,29 @@ function updateForm() {
   const templateFields = templates[type] || [];
 
   templateFields.forEach(field => {
+    // Pular os campos que contêm cabeçalhos com formatação de cor
+    if (field.defaultValue && field.defaultValue.includes("{color:")) {
+      return; // Não exibe esses campos no formulário
+    }
+    
     if (field.type === "textarea") {
       const div = document.createElement("div");
       div.className = "field-container";
-      div.innerHTML = `<label for="${field.id}">${field.label}</label>
-                      <div class="input-with-buttons">
-                        <textarea id="${field.id}" ${field.readonly ? 'readonly' : ''}>${field.defaultValue || ''}</textarea>
+      div.innerHTML = `<div class="label-container">
+                        <label for="${field.id}">${field.label}</label>
                         ${field.readonly ? '' : '<button type="button" class="na-button" onclick="fillWithNA(\'' + field.id + '\')">N/A</button>'}
-                      </div>`;
+                      </div>
+                      <textarea id="${field.id}" ${field.readonly ? 'readonly' : ''}>${field.defaultValue || ''}</textarea>`;
       container.appendChild(div);
     }
     else if (field.type === "text") {
       const div = document.createElement("div");
       div.className = "field-container";
-      div.innerHTML = `<label for="${field.id}">${field.label}</label>
-                      <div class="input-with-buttons">
-                        <input type="text" id="${field.id}" ${field.readonly ? 'readonly' : ''} value="${field.defaultValue || ''}">
+      div.innerHTML = `<div class="label-container">
+                        <label for="${field.id}">${field.label}</label>
                         ${field.readonly ? '' : '<button type="button" class="na-button" onclick="fillWithNA(\'' + field.id + '\')">N/A</button>'}
-                      </div>`;
+                      </div>
+                      <input type="text" id="${field.id}" ${field.readonly ? 'readonly' : ''} value="${field.defaultValue || ''}">`;
       container.appendChild(div);
     }
     else if (field.type === "boolean") {

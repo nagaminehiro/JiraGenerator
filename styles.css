@@ -118,12 +118,20 @@ button:hover {
     flex: 1;
 }
 
+/* Estilos para o contêiner de label com botão N/A */
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
 /* Estilo para botão N/A */
 .na-button {
     background: #95a5a6;
-    padding: 5px 10px;
+    padding: 3px 8px;
     margin-top: 0;
-    height: 32px;
+    height: 26px;
     font-size: 12px;
     white-space: nowrap;
 }
