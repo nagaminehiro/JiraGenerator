@@ -1,32 +1,41 @@
-name: Deploy to GitHub Pages
+name: Deploy static content to Pages
 
 on:
+  # Executa em pushes para a branch principal
   push:
-    branches:
-      - main # ou master, dependendo da sua branch principal
+    branches: ["main"]
+
+  # Permite executar este workflow manualmente pela interface do GitHub
+  workflow_dispatch:
 
 # Define permissões necessárias para o GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
+# Permite apenas uma execução simultânea
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
+  # Job para deploy de conteúdo estático
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Faz checkout completo para evitar problemas com histórico
-
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: . # A pasta que contém os arquivos estáticos
-          clean: true # Limpa o branch de destino antes de fazer deploy
-          branch: gh-pages # A branch onde o site será publicado
-          token: ${{ secrets.GITHUB_TOKEN }} # Token automático fornecido pelo GitHub
+          # Pasta com os arquivos estáticos
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
