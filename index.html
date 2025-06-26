@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Templates Jira</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Gerador de Comentários e Tarefas Jira</h2>
+  <div class="section">
+    <label for="templateCategory">Categoria de Template:</label>
+    <select id="templateCategory" onchange="updateTemplateOptions()">
+      <option value="comment">Templates de Comentários</option>
+      <option value="description">Templates de Descrição de Tarefas</option>
+    </select>
+
+    <label for="type">Tipo:</label>
+    <select id="type" onchange="updateForm()">
+      <option value="review_tests">Testes Aprovados</option>
+      <option value="review_rejected">Testes Reprovados</option>
+      <option value="code_ready">Código Pronto</option>
+      <option value="code_review_approved">Code Review Aprovado</option>
+      <option value="code_review_rejected">Code Review Rejeitado</option>
+      <option value="rework">Rework Changed</option>
+      <option value="doc">Documentação</option>
+    </select>
+
+    <div id="mentionsSection">
+      <label>Responsáveis (@To):</label>
+      <div class="checkbox-list" id="mentions">
+        <label><input type="checkbox" value="[~Leandro.Cabral]"> Leandro Cabral</label>
+        <label><input type="checkbox" value="[~Leonidas.Lima]"> Leonidas Lima</label>
+        <label><input type="checkbox" value="[~Jose.Kaszuba]"> Jose Kaszuba</label>
+        <label><input type="checkbox" value="[~Rubens.Mette]"> Rubens Mette</label>
+        <label><input type="checkbox" value="[~Lucas.Barth]"> Lucas Barth</label>
+        <label><input type="checkbox" value="[~Hiroyuki.Nagamini]"> Hiroyuki Nagamini</label>
+        <label><input type="checkbox" value="[~jonas.magalhaes]"> Jonas Magalhães</label>
+        <label><input type="checkbox" value="[~Fabio.Paixao]"> Fabio Paixão</label>
+      </div>
+    </div>
+
+    <div id="dynamicFields"></div>
+
+    <button onclick="generateOutput()">Gerar</button>
+    <button onclick="copyOutput()">Copiar para Jira</button>
+
+    <div class="output" id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
