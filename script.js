@@ -223,11 +223,15 @@ function fillWithNA(fieldId) {
 // Função para atualizar o formulário com base no tipo selecionado
 function updateForm() {
   const type = document.getElementById("type").value;
+  const category = document.getElementById("templateCategory").value;
   const container = document.getElementById("dynamicFields");
   container.innerHTML = "";
   
   // Limpar o output quando alterar o template
   document.getElementById("output").innerText = "";
+
+  // Atualizar a exibição das orientações de uso (guidelines)
+  updateGuidelines(type, category);
 
   const templateFields = templates[type] || [];
 
@@ -298,6 +302,34 @@ function updateForm() {
       container.appendChild(div);
     }
   });
+}
+
+// Função para atualizar as orientações de uso (guidelines) na interface
+function updateGuidelines(type, category) {
+  const guidelinesSection = document.getElementById("guidelinesSection");
+  const guidelinesContent = document.getElementById("guidelinesContent");
+  
+  // Se existirem guidelines para o tipo selecionado (seja descrição ou comentário)
+  if (templateGuidelines && templateGuidelines[type]) {
+    const guidelines = templateGuidelines[type];
+
+    // Montar HTML com as orientações
+    let guidelinesHTML = `
+      <p><strong>Status onde ação deve ocorrer:</strong> ${guidelines.status}</p>
+      <p><strong>Autor:</strong> ${guidelines.autor}</p>
+      <p><strong>Flegar task?:</strong> ${guidelines.flegar}</p>
+      <p><strong>Mudar Responsável?:</strong> ${guidelines.mudarResponsavel}</p>
+      <p><strong>Responsável:</strong> ${guidelines.responsavel}</p>
+      <p><strong>Enviar para:</strong> ${guidelines.enviarPara}</p>
+      <p><strong>Pessoas que devo marcar:</strong> ${guidelines.marcarPessoas}</p>
+    `;
+
+    guidelinesContent.innerHTML = guidelinesHTML;
+    guidelinesSection.style.display = "block";
+  } else {
+    // Esconder seção se não houver guidelines
+    guidelinesSection.style.display = "none";
+  }
 }
 
 // Função para habilitar/desabilitar o campo de branch

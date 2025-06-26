@@ -60,7 +60,7 @@
     ],
     "breach_contract": [
       { "label": "*{color:#654982}#BREACH_OF_CONTRACT{color}*", "id": "header", "type": "textarea", "readonly": true, "defaultValue": "*{color:#654982}#BREACH_OF_CONTRACT{color}*" },
-      { "label": "Quais foram os projetos em que houveram quebra de contrato?", "id": "projects", "type": "textarea" },
+      { "label": "Quais foram os projetos em que houveram quebra de contrato?", "id": "projects", "type": "checkbox", "options": "@projetos" },
       { "label": "Descrever quais foram os pontos de impacto:", "id": "impacts", "type": "textarea" }
     ],
     "kaizen": [
@@ -100,15 +100,6 @@
     ]
   },
   "templateGuidelines": {
-    "task_generic": {
-      "status": "Backlog",
-      "autor": "DEVELOPER",
-      "flegar": "false",
-      "mudarResponsavel": "Não",
-      "responsavel": "UNASSIGNED",
-      "enviarPara": "__",
-      "marcarPessoas": "Não precisa marcar ninguém"
-    },
     "user_story": {
       "status": "Backlog",
       "autor": "PRODUCT OWNER, SYSTEM ANALYST",
@@ -126,6 +117,87 @@
       "responsavel": "UNASSIGNED",
       "enviarPara": "__",
       "marcarPessoas": "Não precisa marcar ninguém"
+    },
+    "kaizen": {
+      "status": "Backlog",
+      "autor": "DEVELOPER",
+      "flegar": "false",
+      "mudarResponsavel": "Não",
+      "responsavel": "UNASSIGNED",
+      "enviarPara": "__",
+      "marcarPessoas": "Não precisa marcar ninguém"
+    },
+    "breach_contract": {
+      "status": "In Progress",
+      "autor": "DEVELOPER",
+      "flegar": "false",
+      "mudarResponsavel": "Sim",
+      "responsavel": "UNASSIGNED",
+      "enviarPara": "Não alterar estágio",
+      "marcarPessoas": "TESTER,DEVELOPER,ANALYST"
+    },
+    "code_ready": {
+      "status": "In Progress",
+      "autor": "DEVELOPER",
+      "flegar": "false",
+      "mudarResponsavel": "Sim",
+      "responsavel": "UNASSIGNED",
+      "enviarPara": "To Do Code Review",
+      "marcarPessoas": "Não precisa marcar ninguém"
+    },
+    "code_review_rejected": {
+      "status": "Code Review,Review",
+      "autor": "REVIEWER",
+      "flegar": "true",
+      "mudarResponsavel": "Sim",
+      "responsavel": "DEVELOPER",
+      "enviarPara": "Não alterar estágio",
+      "marcarPessoas": "DEVELOPER,TESTER"
+    },
+    "rework": {
+      "status": "Code Review,Review",
+      "autor": "DEVELOPER",
+      "flegar": "true",
+      "mudarResponsavel": "Sim",
+      "responsavel": "UNASSIGNED",
+      "enviarPara": "Não alterar estágio",
+      "marcarPessoas": "REVIEWER,TESTER"
+    },
+    "code_review_approved": {
+      "status": "Code Review,Review",
+      "autor": "REVIEWER",
+      "flegar": "false",
+      "mudarResponsavel": "Sim",
+      "responsavel": "UNASSIGNED",
+      "enviarPara": "To Do Review",
+      "marcarPessoas": "DEVELOPER,TESTER"
+    },
+    "review_rejected": {
+      "status": "Review",
+      "autor": "TESTER",
+      "flegar": "true",
+      "mudarResponsavel": "Sim",
+      "responsavel": "DEVELOPER",
+      "enviarPara": "Não alterar estágio",
+      "marcarPessoas": "DEVELOPER,REVIEWER"
+    },
+    "review_tests": {
+      "status": "Review",
+      "autor": "TESTER",
+      "flegar": "false",
+      "mudarResponsavel": "Não",
+      "responsavel": "TESTER",
+      "enviarPara": "Ready to Deploy",
+      "marcarPessoas": "DEVELOPER,REVIEWER"
+    },
+    "task_generic": {
+      "status": "Backlog",
+      "autor": "PRODUCT OWNER, SYSTEM ANALYST",
+      "flegar": "false",
+      "mudarResponsavel": "Não",
+      "responsavel": "UNASSIGNED",
+      "enviarPara": "__",
+      "marcarPessoas": "Não precisa marcar ninguém"
     }
   },
   "mentions": [
@@ -137,4 +209,3 @@
     {"name": "Jonas Magalhães", "value": "[~Jonas.Magalhaes]"}
   ]
 }
-
