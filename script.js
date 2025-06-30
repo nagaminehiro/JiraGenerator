@@ -451,7 +451,7 @@ function generateOutput() {
         }
       });
 
-      output += `\n*APPROVED* ()`;
+      output += `\n*APPROVED* (/)`;
     }
     else if (type === "code_review_rejected") {
       output += `(Evidenciar de forma breve que o code review foi finalizado)\n\n`;
