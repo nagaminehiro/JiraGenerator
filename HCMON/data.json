@@ -201,11 +201,15 @@
     }
   },
   "mentions": [
+    {"name": "Eduardo Immig", "value": "[~eduardo.immig]"},
+    {"name": "Fernando Mueller", "value": "[~mueller.fernando]"},
+    {"name": "Talisia Schmidt", "value": "[~talisia.schmidt]"},
+    {"name": "Fabio Paixão", "value": "[~Fabio.Paixao]"},
+    {"name": "Jonas Magalhães", "value": "[~jonas.magalhaes]"},
     {"name": "João Puel", "value": "[~Joao.Puel]"},
-    {"name": "Eduardo Immig", "value": "[~Eduardo.Immig]"},
-    {"name": "Fernando Mueller", "value": "[~Mueller.Fernando]"},
-    {"name": "Talisia Schmidt", "value": "[~Talisia.Schmidt]"},
-    {"name": "Fabio Paixão", "value": "[~Fabio.paixao]"},
-    {"name": "Jonas Magalhães", "value": "[~Jonas.Magalhaes]"}
+    {"name": "Samuel Ferreira", "value": "[~Samuel.Ferreira]"},
+    {"name": "José Kaszuba", "value": "[~Jose.Kaszuba]"},
+    {"name": "Hiroyuki Nagamini", "value": "[~Hiroyuki.Nagamini]"}
+
   ]
 }
