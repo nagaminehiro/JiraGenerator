@@ -110,7 +110,7 @@ button:hover {
     display: flex;
     gap: 8px;
     align-items: flex-start;
-    width: 100%;
+    width: 30%;
 }
 
 .input-with-buttons textarea,
@@ -123,7 +123,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 5px;
 }
 
