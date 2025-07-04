@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gerador de Templates Jira</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div id="contadorDias"
+    style="display:none; margin-bottom: 16px; padding: 10px; background: #f6c342; color: #222; font-weight: bold; border-radius: 6px; text-align: center;">
+  </div>
   <h2>Gerador de Comentários e Tarefas Jira</h2>
+
   <div class="section">
     <label for="teamSelect">Time:</label>
     <select id="teamSelect" onchange="loadTeamData()">
@@ -62,5 +68,27 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Contador de dias para 22/08/2025
+    (function () {
+      const div = document.getElementById('contadorDias');
+      const hoje = new Date();
+      const alvo = new Date(2025, 7, 22); // Mês é zero-based: 7 = agosto
+      // Zerar horas para comparar apenas datas
+      hoje.setHours(0, 0, 0, 0);
+      alvo.setHours(0, 0, 0, 0);
+      if (hoje.getTime() > alvo.getTime()) {
+        div.style.display = 'none';
+      } else if (hoje.getTime() === alvo.getTime()) {
+        div.style.display = 'block';
+        div.textContent = 'HOJE É O DIA EM!';
+      } else {
+        const diff = Math.ceil((alvo - hoje) / (1000 * 60 * 60 * 24));
+        div.style.display = 'block';
+        div.textContent = `Faltam ${diff} dia${diff === 1 ? '' : 's'} para o o PPLR!`;
+      }
+    })();
+  </script>
 </body>
+
 </html>
