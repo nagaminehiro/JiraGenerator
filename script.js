@@ -470,6 +470,54 @@ function generateOutput() {
     else if (type === "review_rejected") {
       output += `*Motivo da reprovação:*\n${document.getElementById('motivo')?.value || ''}`;
     }
+    else if (type === "bug_checklist" || type === "subtask_programming_checklist" || type === "story_checklist" || 
+             type === "code_reviewer_checklist" || type === "qa_testing_checklist" || 
+             type === "bugfix_template" || type === "analysis_task_template" || 
+             type === "test_case_template" || type === "evidencia_testes_template" ||
+             type === "analise_critica_template" || type === "classificacao_retrabalho_template") {
+      // Processa templates de checklists
+      const templateFields = templates[type] || [];
+      
+      // Adiciona o painel inicial se existir
+      const panelStart = templateFields.find(field => field.id === "panel_start");
+      if (panelStart && panelStart.defaultValue) {
+        output += `${panelStart.defaultValue}\n\n`;
+      }
+      
+      // Processa os campos do formulário
+      templateFields.forEach(field => {
+        // Pula os campos panel_start e panel_end, pois são processados separadamente
+        if (field.id === "panel_start" || field.id === "panel_end") {
+          return;
+        }
+        
+        if (field.type === "boolean") {
+          const value = document.querySelector(`input[name='${field.id}']:checked`)?.value;
+          if (value) {
+            output += `${field.label}\n(${value === 'Sim' ? '/' : 'x'}) ${value}\n\n`;
+          }
+        } 
+        else if (field.type === "textarea" && field.readonly) {
+          if (field.defaultValue) {
+            output += `${field.defaultValue}\n\n`;
+          }
+        }
+        else if (field.id && !field.readonly) {
+          const value = document.getElementById(field.id)?.value || '';
+          if (field.label) {
+            output += `${field.label}\n${value}\n\n`;
+          } else {
+            output += `${value}\n\n`;
+          }
+        }
+      });
+
+      // Adiciona o painel final se existir
+      const panelEnd = templateFields.find(field => field.id === "panel_end");
+      if (panelEnd && panelEnd.defaultValue) {
+        output += `${panelEnd.defaultValue}`;
+      }
+    }
   }
   // Templates de descrição de tarefa
   else {
