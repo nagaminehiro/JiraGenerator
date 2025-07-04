@@ -171,6 +171,17 @@
       { "label": "Descreva as ações que serão tomadas para evitar que o mesmo problema ocorra novamente.", "id": "acao_prevencao", "type": "textarea", "placeholder": "Exemplo:\n- Revisar os critérios de aceite antes de iniciar o desenvolvimento.\n- Melhorar a comunicação entre as equipes de análise e desenvolvimento.\n- Implementar validações adicionais no processo de revisão de código." },
 
       { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
+    ],
+    "doc": [
+      { "label": "1 — O que foi alterado/implementado no sistema?", "id": "q1", "type": "textarea" },
+      { "label": "1.1 — Houve alguma alteração ou criação de web service?", "id": "q11", "type": "textarea" },
+      { "label": "2 — Por que esta alteração/implementação foi realizada?", "id": "q2", "type": "textarea" },
+      { "label": "3 — Qual o local alterado/impactado?", "id": "q3", "type": "textarea" },
+      { "label": "4 — Documentação de processo", "id": "q4", "type": "textarea" },
+      { "label": "5 — Documentação técnica", "id": "q5", "type": "textarea" },
+      { "label": "6 — Inserir prints", "id": "q6", "type": "textarea" },
+      { "label": "7 — O que deve ser divulgado no Notas da Versão?", "id": "q7", "type": "textarea" },
+      { "label": "8 — Esta entrega também é válida para outras versões do sistema?", "id": "q8", "type": "textarea" }
     ]
   },
   "descriptionTemplates": {
