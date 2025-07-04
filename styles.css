@@ -108,7 +108,6 @@ button:hover {
 /* Container para input com botão N/A */
 .input-with-buttons {
     display: flex;
-    flex-direction: column;
     gap: 8px;
     align-items: flex-start;
     width: 100%;
@@ -122,6 +121,7 @@ button:hover {
 /* Estilos para o contêiner de label com botão N/A */
 .label-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
