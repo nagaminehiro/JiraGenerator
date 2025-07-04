@@ -104,7 +104,18 @@ function getTemplateDisplayName(type) {
     doc: "Documentação",
     task_generic: "Tarefa Genérica",
     user_story: "Story de Usuário",
-    bug: "BUG ou Subtask"
+    bug: "BUG ou Subtask",
+    bug_checklist: "Bug(interno ou de mercado)",
+    subtask_programming_checklist: "Subtask de Programação",
+    story_checklist: "Story (quando não há subtasks)",
+    code_reviewer_checklist: "Code Reviewer Checklist",
+    qa_testing_checklist: "QA",
+    bugfix_template: "Abertura de Bug",
+    analysis_task_template: "Abertura de Subtask",
+    test_case_template: "Test Case",
+    evidencia_testes_template: "Evidência de Testes",
+    analise_critica_template: "Análise Crítica e de Impacto",
+    classificacao_retrabalho_template: "Classificação de Retrabalho"
   };
   
   return displayNames[type] || type;
@@ -236,6 +247,13 @@ function updateForm() {
   const templateFields = templates[type] || [];
 
   templateFields.forEach(field => {
+    // Pular os campos de painéis e informações sobre quando preencher
+    if (field.id === "panel_start" || field.id === "panel_end" || 
+        (field.defaultValue && field.defaultValue.includes("{panel")) ||
+        (field.defaultValue && field.defaultValue.includes("*Quando deve ser preenchido:*"))) {
+      return; // Não exibe esses campos no formulário
+    }
+
     // Pular os campos que contêm cabeçalhos com formatação de cor
     if (field.defaultValue && field.defaultValue.includes("{color:")) {
       return; // Não exibe esses campos no formulário

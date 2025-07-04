@@ -19,28 +19,39 @@
   ],
   "commentTemplates": {
     "bug_checklist": [
+      { "label": "{panel:title=CHECKLIST DE BUG — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=CHECKLIST DE BUG — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}" },
+      { "label": "*Quando deve ser preenchido:* antes de enviar para _To Do Code Review_.", "id": "info", "type": "textarea", "readonly": true, "defaultValue": "*Quando deve ser preenchido:* antes de enviar para _To Do Code Review_." },
       { "label": "Você preencheu o Test Case corretamente de acordo com o [Template Test Case|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Template-para-Test-Case]?*", "id": "testcase", "type": "boolean" },
       { "label": "Você preencheu os Componentes corretamente de acordo com o [Guia de categorização de tarefas no Jira|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Guia-de-categorização-de-tarefas-no-Jira]?*", "id": "componentes", "type": "boolean" },
       { "label": "Você preencheu os campos de Análise crítica corretamente de acordo com o [Guia de Preenchimento da Critical Analysis no Jira|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Guia-de-Preenchimento-da-Critical-Analysis-no-Jira]?*", "id": "analise_critica", "type": "boolean" },
       { "label": "Você anexou as evidências dos testes corretamente na tarefa de acordo com o [Template para evidência de testes|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Template-para-evid%C3%AAncia-de-testes]?*", "id": "evidencias", "type": "boolean" },
       { "label": "As horas trabalhadas na demanda foram registradas corretamente?*", "id": "horas", "type": "boolean" },
       { "label": "A pipeline do merge request passou e não possui erros e/ou codesmells a serem corrigidos?*", "id": "pipeline", "type": "boolean" },
-      { "label": "O link do Merge Request (MR) foi adicionado corretamente na tarefa e está acessível?*", "id": "mr_link", "type": "boolean" }
+      { "label": "O link do Merge Request (MR) foi adicionado corretamente na tarefa e está acessível?*", "id": "mr_link", "type": "boolean" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "subtask_programming_checklist": [
+      { "label": "{panel:title=CHECKLIST DE SUBTASK DE PROGRAMAÇÃO — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#007bff|titleColor=#FFFFFF|titleBGColor=#007bff|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=CHECKLIST DE SUBTASK DE PROGRAMAÇÃO — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#007bff|titleColor=#FFFFFF|titleBGColor=#007bff|bgColor=#E5E5E5}" },
+      { "label": "*Quando deve ser preenchido:* antes de enviar para _To Do Code Review_.", "id": "info", "type": "textarea", "readonly": true, "defaultValue": "*Quando deve ser preenchido:* antes de enviar para _To Do Code Review_." },
       { "label": "Você anexou as evidências dos testes corretamente na tarefa de acordo com o [Template para evidência de testes|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Template-para-evid%C3%AAncia-de-testes]?*", "id": "evidencias", "type": "boolean" },
       { "label": "As horas trabalhadas na demanda foram registradas corretamente?*", "id": "horas", "type": "boolean" },
       { "label": "A pipeline do merge request passou e não possui erros e/ou codesmells a serem corrigidos?*", "id": "pipeline", "type": "boolean" },
-      { "label": "O link do Merge Request (MR) foi adicionado corretamente na tarefa e está acessível?*", "id": "mr_link", "type": "boolean" }
+      { "label": "O link do Merge Request (MR) foi adicionado corretamente na tarefa e está acessível?*", "id": "mr_link", "type": "boolean" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "story_checklist": [
+      { "label": "{panel:title=CHECKLIST DE STORY (QUANDO NÃO HÁ SUBTASKS) — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#ffc107|titleColor=#FFFFFF|titleBGColor=#ffc107|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=CHECKLIST DE STORY (QUANDO NÃO HÁ SUBTASKS) — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#ffc107|titleColor=#FFFFFF|titleBGColor=#ffc107|bgColor=#E5E5E5}" },
+      { "label": "*Quando deve ser preenchido:* antes de enviar para _To Do Code Review_.", "id": "info", "type": "textarea", "readonly": true, "defaultValue": "*Quando deve ser preenchido:* antes de enviar para _To Do Code Review_." },
       { "label": "Você preencheu o Test Case corretamente de acordo com o [Template Test Case|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Template-para-Test-Case]?*", "id": "testcase", "type": "boolean" },
       { "label": "Você anexou as evidências dos testes corretamente na tarefa de acordo com o [Template para evidência de testes|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Template-para-evid%C3%AAncia-de-testes]?*", "id": "evidencias", "type": "boolean" },
       { "label": "As horas trabalhadas na demanda foram registradas corretamente?*", "id": "horas", "type": "boolean" },
       { "label": "A pipeline do merge request passou e não possui erros e/ou codesmells a serem corrigidos?*", "id": "pipeline", "type": "boolean" },
-      { "label": "O link do Merge Request (MR) foi adicionado corretamente na tarefa e está acessível?*", "id": "mr_link", "type": "boolean" }
+      { "label": "O link do Merge Request (MR) foi adicionado corretamente na tarefa e está acessível?*", "id": "mr_link", "type": "boolean" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "code_reviewer_checklist": [
+      { "label": "{panel:title=CHECKLIST DE CODE REVIEWER — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#6c757d|titleColor=#FFFFFF|titleBGColor=#6c757d|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=CHECKLIST DE CODE REVIEWER — Checklist a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#6c757d|titleColor=#FFFFFF|titleBGColor=#6c757d|bgColor=#E5E5E5}" },
+      { "label": "*Quando deve ser preenchido:* após realizar o *Code Review*.", "id": "info", "type": "textarea", "readonly": true, "defaultValue": "*Quando deve ser preenchido:* após realizar o *Code Review*." },
       { "label": "As horas trabalhadas na demanda foram registradas corretamente?*", "id": "horas", "type": "boolean" },
       { "label": "O código está legível, bem estruturado e segue as boas práticas de desenvolvimento?", "id": "codigo_legivel", "type": "boolean" },
       { "label": "O Merge Request (MR) foi aprovado (*approve*)?", "id": "mr_aprovado", "type": "boolean" },
@@ -49,20 +60,26 @@
       { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "qa_testing_checklist": [
+      { "label": "{panel:title=CHECKLIST DE SUBTASK DE EXECUÇÃO DE TESTES — Checklist a ser preenchido pelo QA|borderStyle=solid|borderColor=#28a745|titleColor=#FFFFFF|titleBGColor=#28a745|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=CHECKLIST DE SUBTASK DE EXECUÇÃO DE TESTES — Checklist a ser preenchido pelo QA|borderStyle=solid|borderColor=#28a745|titleColor=#FFFFFF|titleBGColor=#28a745|bgColor=#E5E5E5}" },
+      { "label": "*Quando deve ser preenchido:* antes de enviar para _Done_.", "id": "info", "type": "textarea", "readonly": true, "defaultValue": "*Quando deve ser preenchido:* antes de enviar para _Done_." },
       { "label": "As horas trabalhadas na demanda foram registradas corretamente?*", "id": "horas", "type": "boolean" },
       { "label": "Todos os Merge Requests (MRs) estão com o status *Approve*?*", "id": "mr_aprovados", "type": "boolean" },
       { "label": "Foi verificado se existem dependências de liberação para a demanda?*", "id": "dependencias_liberacao", "type": "boolean" },
       { "label": "Todos os MRs foram mergeados com sucesso?", "id": "mrs_mergeados", "type": "boolean" },
-      { "label": "A subtask de documentação foi preenchida conforme o [Template de Documentação|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Template-de-Documenta%C3%A7%C3%A3o]?*", "id": "documentacao", "type": "boolean" }
+      { "label": "A subtask de documentação foi preenchida conforme o [Template de Documentação|https://git.senior.com.br/gestao-pessoas/recruitment-wikis/-/wikis/Template-de-Documenta%C3%A7%C3%A3o]?*", "id": "documentacao", "type": "boolean" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "bugfix_template": [
+      { "label": "{panel:title=BUGFIX|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=BUGFIX|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}" },
       { "label": "*1-Qual o problema?*", "id": "problema", "type": "textarea", "placeholder": "Descrição breve e objetiva do problema encontrado" },
       { "label": "*2-Qual o comportamento esperado?*", "id": "comportamento_esperado", "type": "textarea", "placeholder": "Descrição de como a rotina/situação deveria ter se comportado." },
       { "label": "*3-Tenant/usuário/senha*", "id": "credenciais", "type": "textarea", "placeholder": "Dados de acesso para auxiliar na simulação do problema caso necessário" },
       { "label": "*4-Passo a passo para simulação*", "id": "passo_a_passo", "type": "textarea", "placeholder": "Descrição com o máximo de detalhes possíveis do que deve ser feito para chegar ate o erro descrito" },
-      { "label": "*5-Print/logs/anexos*", "id": "anexos", "type": "textarea", "placeholder": "Caso haja, é sempre bem vindo" }
+      { "label": "*5-Print/logs/anexos*", "id": "anexos", "type": "textarea", "placeholder": "Caso haja, é sempre bem vindo" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "analysis_task_template": [
+      { "label": "{panel:title=TASK — Template a ser preenchido pelo Analista|borderStyle=solid|borderColor=#205081|titleColor=#FFFFFF|titleBGColor=#205081|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=TASK — Template a ser preenchido pelo Analista|borderStyle=solid|borderColor=#205081|titleColor=#FFFFFF|titleBGColor=#205081|bgColor=#E5E5E5}" },
       { "label": "*1 — Objetivo:*", "id": "objetivo", "type": "textarea", "placeholder": "Descrição breve e objetiva do problema que quer ser resolvido" },
       { "label": "*2 - Envolve permissões/recursos ?*", "id": "permissoes", "type": "textarea", "placeholder": "Sim/Não e uma breve descrição de qual recurso precisa ser criado/validade e as ações a serem utilizadas" },
       { "label": "*3 - Gera alguma quebra de contrato?*", "id": "quebra_contrato", "type": "textarea", "placeholder": "Sim/Não e qual é a API impactada, lembrando que criação nova de enumerados, alteração de obrigatoriedade e tamanho dos campos devem ser considerados" },
@@ -70,9 +87,11 @@
       { "label": "*5 — Implementação:*", "id": "implementacao", "type": "textarea", "placeholder": "Descrição de quais as implementações devem ser feitas na task e se necessário prints para exemplificar a necessidade da implementação/prototipação." },
       { "label": "*6 — Critérios de Aceite:*", "id": "criterios", "type": "textarea", "placeholder": "Quais os critérios de aceite da implementação da task em específico." },
       { "label": "*7 - Estimativa de Horas:*", "id": "estimativa_horas", "type": "textarea", "readonly": true, "defaultValue": "As horas de desenvolvimento estimadas consideram os seguintes pontos:\n* Implementação\n* Testes Unitários\n* Preparação do Ambiente e Testes Manuais\n* CICD/Sonar\n* Revisão de Código (Code Review)" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" },
       { "label": "**Em caso de mudanças na análise após o início da tarefa, o dev deve fazer um comentário na tarefa do JIRA explicando a mudança.**", "id": "observacao", "type": "textarea", "readonly": true, "defaultValue": "**Em caso de mudanças na análise após o início da tarefa, o dev deve fazer um comentário na tarefa do JIRA explicando a mudança.**" }
     ],
     "test_case_template": [
+      { "label": "{panel:title=Descrição|titleBGColor=#e1e2e3}", "id": "descricao_panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=Descrição|titleBGColor=#e1e2e3}" },
       { "label": "Descrição do problema ou da tarefa realizada.", "id": "descricao_conteudo", "type": "textarea", "placeholder": "Descreva o problema ou a tarefa realizada em detalhes" },
       { "label": "{panel}", "id": "descricao_panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" },
 
@@ -101,9 +120,12 @@
       { "label": "{panel}", "id": "dependencias_panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" },
 
       { "label": "{panel:title=Extras|titleBGColor=#e1e2e3}", "id": "extras_panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=Extras|titleBGColor=#e1e2e3}" },
-      { "label": "Possíveis impactos em outras jornadas e outras particularidades que julgar relevantes.", "id": "extras_conteudo", "type": "textarea", "placeholder": "Adicione informações adicionais relevantes" }
+      { "label": "Possíveis impactos em outras jornadas e outras particularidades que julgar relevantes.", "id": "extras_conteudo", "type": "textarea", "placeholder": "Adicione informações adicionais relevantes" },
+      { "label": "{panel}", "id": "extras_panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "evidencia_testes_template": [
+      { "label": "{panel:title=EVIDÊNCIA DE TESTES — Template a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#28a745|titleColor=#FFFFFF|titleBGColor=#28a745|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=EVIDÊNCIA DE TESTES — Template a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#28a745|titleColor=#FFFFFF|titleBGColor=#28a745|bgColor=#E5E5E5}" },
+      { "label": "*1. Cenários Testados:*", "id": "cenarios_header", "type": "textarea", "readonly": true, "defaultValue": "*1. Cenários Testados:*" },
       { "label": "Descreva os cenários testados para garantir que a tarefa está funcionando conforme esperado.", "id": "cenarios_testados", "type": "textarea", "placeholder": "Exemplo:\n- Cenário 1: Testar a criação de um novo registro no módulo X.\n- Cenário 2: Validar o comportamento do sistema ao receber dados inválidos.\n- Cenário 3: Garantir que o fluxo Y está funcionando corretamente após a correção." },
 
       { "label": "*2. Critérios de Aceite:*", "id": "criterios_header", "type": "textarea", "readonly": true, "defaultValue": "*2. Critérios de Aceite:*" },
@@ -121,10 +143,12 @@
       { "label": "Explique os motivos pelos quais as horas previstas foram ultrapassadas.", "id": "estouro_justificativa", "type": "textarea", "placeholder": "Exemplo:\n- A tarefa exigiu ajustes adicionais devido a mudanças na regra de negócio durante o desenvolvimento.\n- Foi necessário realizar testes mais extensivos devido à complexidade do cenário.\n- Identificamos dependências externas que não estavam previstas inicialmente, o que aumentou o tempo de execução." },
 
       { "label": "*6. Observações:*", "id": "observacoes_header", "type": "textarea", "readonly": true, "defaultValue": "*6. Observações:*" },
-      { "label": "Adicione qualquer observação relevante sobre os testes realizados.", "id": "observacoes", "type": "textarea", "placeholder": "Exemplo:\n- Durante os testes, foi identificado que o fluxo Y apresenta lentidão em cenários com grande volume de dados. Isso será tratado em uma nova tarefa." }
+      { "label": "Adicione qualquer observação relevante sobre os testes realizados.", "id": "observacoes", "type": "textarea", "placeholder": "Exemplo:\n- Durante os testes, foi identificado que o fluxo Y apresenta lentidão em cenários com grande volume de dados. Isso será tratado em uma nova tarefa." },
 
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "analise_critica_template": [
+      { "label": "{panel:title=ANÁLISE CRÍTICA E DE IMPACTO — Template a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=ANÁLISE CRÍTICA E DE IMPACTO — Template a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}" },
 
       { "label": "*1. Causa do Erro:*", "id": "causa_header", "type": "textarea", "readonly": true, "defaultValue": "*1. Causa do Erro:*" },
       { "label": "Descreva o que causou o problema, incluindo detalhes técnicos, se necessário.", "id": "causa_erro", "type": "textarea", "placeholder": "Exemplo 1: O erro foi causado por uma configuração incorreta no módulo de integração com o ERP, onde o parâmetro X estava ausente.\nExemplo 2: O erro foi causado por um NullPointerException no método X, pois o objeto Y estava nulo devido à ausência de validação no fluxo Z. Segue trecho do código:" },
@@ -133,38 +157,47 @@
       { "label": "Explique como o problema foi resolvido.", "id": "correcao_realizada", "type": "textarea", "placeholder": "Exemplo 1: Foi realizada a correção do parâmetro X na configuração do módulo e ajustado o código para validar a presença do parâmetro.\nExemplo 2: Foi adicionada uma validação no fluxo Z para garantir que o objeto Y seja inicializado corretamente antes de ser utilizado." },
 
       { "label": "*3. Impactos:*", "id": "impactos_header", "type": "textarea", "readonly": true, "defaultValue": "*3. Impactos:*" },
-      { "label": "Liste os impactos gerados pelo erro e pela correção.", "id": "impactos", "type": "textarea", "placeholder": "Exemplo:\n- Impacto do erro: Falha na integração com o ERP, causando atrasos no processamento de dados.\n- Impacto da correção: Necessidade de reprocessar os dados afetados e realizar testes adicionais no módulo corrigido." }
+      { "label": "Liste os impactos gerados pelo erro e pela correção.", "id": "impactos", "type": "textarea", "placeholder": "Exemplo:\n- Impacto do erro: Falha na integração com o ERP, causando atrasos no processamento de dados.\n- Impacto da correção: Necessidade de reprocessar os dados afetados e realizar testes adicionais no módulo corrigido." },
 
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "classificacao_retrabalho_template": [
+      { "label": "{panel:title=CLASSIFICAÇÃO DE RETRABALHO — Template a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#6f42c1|titleColor=#FFFFFF|titleBGColor=#6f42c1|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=CLASSIFICAÇÃO DE RETRABALHO — Template a ser preenchido pelo Desenvolvedor|borderStyle=solid|borderColor=#6f42c1|titleColor=#FFFFFF|titleBGColor=#6f42c1|bgColor=#E5E5E5}" },
 
       { "label": "*1. Motivo do Retrabalho:*", "id": "motivo_header", "type": "textarea", "readonly": true, "defaultValue": "*1. Motivo do Retrabalho:*" },
       { "label": "Descreva o motivo que levou ao retrabalho, incluindo detalhes técnicos ou de processo, se necessário.", "id": "motivo_retrabalho", "type": "textarea", "placeholder": "Exemplo:\n- Falha na análise inicial que não considerou o cenário X.\n- Erro de implementação devido à ausência de validação no ponto Y.\n- Alteração de requisitos após o início do desenvolvimento." },
 
       { "label": "*2. Ação para Prevenção:*", "id": "acao_header", "type": "textarea", "readonly": true, "defaultValue": "*2. Ação para Prevenção:*" },
-      { "label": "Descreva as ações que serão tomadas para evitar que o mesmo problema ocorra novamente.", "id": "acao_prevencao", "type": "textarea", "placeholder": "Exemplo:\n- Revisar os critérios de aceite antes de iniciar o desenvolvimento.\n- Melhorar a comunicação entre as equipes de análise e desenvolvimento.\n- Implementar validações adicionais no processo de revisão de código." }
+      { "label": "Descreva as ações que serão tomadas para evitar que o mesmo problema ocorra novamente.", "id": "acao_prevencao", "type": "textarea", "placeholder": "Exemplo:\n- Revisar os critérios de aceite antes de iniciar o desenvolvimento.\n- Melhorar a comunicação entre as equipes de análise e desenvolvimento.\n- Implementar validações adicionais no processo de revisão de código." },
 
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ]
   },
   "descriptionTemplates": {
     "bug": [
+      { "label": "{panel:title=DESCRIÇÃO DO BUG|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=DESCRIÇÃO DO BUG|borderStyle=solid|borderColor=#d04437|titleColor=#FFFFFF|titleBGColor=#d04437|bgColor=#E5E5E5}" },
       { "label": "*Resumo:*", "id": "resumo", "type": "textarea", "placeholder": "Forneça um resumo conciso do bug." },
       { "label": "*Passos para Reproduzir:*", "id": "passos_reproduzir", "type": "textarea", "placeholder": "Liste os passos para reproduzir o bug." },
       { "label": "*Comportamento Esperado:*", "id": "comportamento_esperado", "type": "textarea", "placeholder": "Descreva o comportamento esperado." },
       { "label": "*Comportamento Observado:*", "id": "comportamento_observado", "type": "textarea", "placeholder": "Descreva o comportamento observado." },
       { "label": "*Ambiente:*", "id": "ambiente", "type": "textarea", "placeholder": "Informe o ambiente onde o bug foi encontrado (ex: produção, homologação)." },
-      { "label": "*Anexos:*", "id": "anexos", "type": "textarea", "placeholder": "Adicione prints, logs ou outros anexos relevantes." }
+      { "label": "*Anexos:*", "id": "anexos", "type": "textarea", "placeholder": "Adicione prints, logs ou outros anexos relevantes." },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "task": [
+      { "label": "{panel:title=DESCRIÇÃO DA TASK|borderStyle=solid|borderColor=#205081|titleColor=#FFFFFF|titleBGColor=#205081|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=DESCRIÇÃO DA TASK|borderStyle=solid|borderColor=#205081|titleColor=#FFFFFF|titleBGColor=#205081|bgColor=#E5E5E5}" },
       { "label": "*Título:*", "id": "titulo", "type": "textarea", "placeholder": "Informe o título da task." },
       { "label": "*Descrição Detalhada:*", "id": "descricao_detalhada", "type": "textarea", "placeholder": "Descreva detalhadamente a tarefa a ser realizada." },
       { "label": "*Critérios de Aceite:*", "id": "criterios_aceite_task", "type": "textarea", "placeholder": "Quais os critérios de aceite para esta task." },
       { "label": "*Dependências:*", "id": "dependencias_task", "type": "textarea", "placeholder": "Existem dependências para a realização desta task?" },
       { "label": "*Estimativa de Horas:*", "id": "estimativa_horas_task", "type": "textarea", "placeholder": "Qual a estimativa de horas para conclusão?" },
       { "label": "*Responsável:*", "id": "responsavel_task", "type": "textarea", "placeholder": "Quem será o responsável por esta task?" },
-      { "label": "*Data Limite:*", "id": "data_limite_task", "type": "textarea", "placeholder": "Qual a data limite para conclusão?" }
+      { "label": "*Data Limite:*", "id": "data_limite_task", "type": "textarea", "placeholder": "Qual a data limite para conclusão?" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ],
     "test_case": [
+      { "label": "{panel:title=TEST CASE — Descrição|borderStyle=solid|borderColor=#28a745|titleColor=#FFFFFF|titleBGColor=#28a745|bgColor=#E5E5E5}", "id": "panel_start", "type": "textarea", "readonly": true, "defaultValue": "{panel:title=TEST CASE — Descrição|borderStyle=solid|borderColor=#28a745|titleColor=#FFFFFF|titleBGColor=#28a745|bgColor=#E5E5E5}" },
+      { "label": "*ID do Test Case:*", "id": "id_test_case", "type": "textarea", "placeholder": "Informe o ID do Test Case." },
       { "label": "*Título do Test Case:*", "id": "titulo_test_case", "type": "textarea", "placeholder": "Informe o título do Test Case." },
       { "label": "*Descrição do Test Case:*", "id": "descricao_test_case", "type": "textarea", "placeholder": "Descreva detalhadamente o Test Case." },
       { "label": "*Pré-condições:*", "id": "pre_condicoes", "type": "textarea", "placeholder": "Quais as pré-condições para a execução do Test Case?" },
@@ -173,7 +206,8 @@
       { "label": "*Resultado Obtido:*", "id": "resultado_obtido", "type": "textarea", "placeholder": "Qual o resultado obtido?" },
       { "label": "*Status:*", "id": "status_test_case", "type": "textarea", "placeholder": "Qual o status atual do Test Case?" },
       { "label": "*Responsável pelo Test Case:*", "id": "responsavel_test_case", "type": "textarea", "placeholder": "Quem é o responsável pelo Test Case?" },
-      { "label": "*Data da Última Execução:*", "id": "data_ultima_execucao", "type": "textarea", "placeholder": "Quando foi a última execução do Test Case?" }
+      { "label": "*Data da Última Execução:*", "id": "data_ultima_execucao", "type": "textarea", "placeholder": "Quando foi a última execução do Test Case?" },
+      { "label": "{panel}", "id": "panel_end", "type": "textarea", "readonly": true, "defaultValue": "{panel}" }
     ]
   },
   "templateGuidelines": {
