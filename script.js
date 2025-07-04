@@ -259,11 +259,14 @@ function updateForm() {
       return; // Não exibe esses campos no formulário
     }
     
+    // Converter links em formato Jira [texto|url] em links HTML clicáveis
+    const labelWithLinks = field.label ? convertJiraLinks(field.label) : '';
+
     if (field.type === "textarea") {
       const div = document.createElement("div");
       div.className = "field-container";
       div.innerHTML = `<div class="label-container">
-                        <label for="${field.id}">${field.label}</label>
+                        <label for="${field.id}">${labelWithLinks}</label>
                         ${field.readonly ? '' : '<button type="button" class="na-button" onclick="fillWithNA(\'' + field.id + '\')">N/A</button>'}
                       </div>
                       <textarea id="${field.id}" ${field.readonly ? 'readonly' : ''}>${field.defaultValue || ''}</textarea>`;
@@ -273,7 +276,7 @@ function updateForm() {
       const div = document.createElement("div");
       div.className = "field-container";
       div.innerHTML = `<div class="label-container">
-                        <label for="${field.id}">${field.label}</label>
+                        <label for="${field.id}">${labelWithLinks}</label>
                         ${field.readonly ? '' : '<button type="button" class="na-button" onclick="fillWithNA(\'' + field.id + '\')">N/A</button>'}
                       </div>
                       <input type="text" id="${field.id}" ${field.readonly ? 'readonly' : ''} value="${field.defaultValue || ''}">`;
@@ -282,7 +285,7 @@ function updateForm() {
     else if (field.type === "boolean") {
       const div = document.createElement("div");
       div.className = "boolean-group";
-      div.innerHTML = `<label>${field.label}</label>
+      div.innerHTML = `<label>${labelWithLinks}</label>
                       <div class="radio-options" name="${field.id}">
                         <label><input type="radio" name="${field.id}" value="Sim"> Sim</label>
                         <label><input type="radio" name="${field.id}" value="Não"> Não</label>
@@ -292,7 +295,7 @@ function updateForm() {
     else if (field.type === "checkbox" && field.options) {
       const div = document.createElement("div");
       div.className = "field-container";
-      let checkboxHTML = `<label>${field.label}</label><div class="checkbox-list">`;
+      let checkboxHTML = `<label>${labelWithLinks}</label><div class="checkbox-list">`;
 
       field.options.forEach(option => {
         checkboxHTML += `<label><input type="checkbox" name="${field.id}" value="${option}"> ${option}</label>`;
@@ -305,7 +308,7 @@ function updateForm() {
     else if (field.type === "env") {
       const div = document.createElement("div");
       div.className = "field-container";
-      div.innerHTML = `<label>${field.label}</label>`;
+      div.innerHTML = `<label>${labelWithLinks}</label>`;
 
       projetos.forEach(projeto => {
         const envDiv = document.createElement("div");
@@ -606,6 +609,13 @@ function copyOutput() {
       console.error('Erro ao copiar texto: ', err);
       alert("Não foi possível copiar o texto. Por favor, copie manualmente.");
     });
+}
+
+// Função para converter links no formato Jira [texto|url] em links HTML <a>
+function convertJiraLinks(text) {
+  if (!text) return text;
+  // Regex para encontrar links no formato [texto|url]
+  return text.replace(/\[(.*?)\|(.*?)\]/g, '<a href="$2" target="_blank">$1</a>');
 }
 
 // Inicializa a página quando carregar
