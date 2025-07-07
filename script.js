@@ -389,7 +389,7 @@ function generateOutput() {
         output = `*{color:red}#REWORK_REVIEW{color}*\n`;
         break;
       case "code_ready":
-        output = `*{color:blue}#CODE_READY*{color}\n`;
+        output = `*{color:blue}#CODE_READY{color}*\n`;
         break;
       case "code_review_approved":
         output = `*{color:#8eb021}#CODE_REVIEW_APPROVED{color}*\n`;

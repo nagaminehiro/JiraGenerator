@@ -31,7 +31,7 @@
       { "label": "Motivo da reprovação:", "id": "motivo", "type": "textarea" }
     ],
     "code_ready": [
-      { "label": "*{color:blue}#CODE_READY*{color}", "id": "header", "type": "textarea", "readonly": true, "defaultValue": "*{color:blue}#CODE_READY*{color}" },
+      { "label": "*{color:blue}#CODE_READY{color}*", "id": "header", "type": "textarea", "readonly": true, "defaultValue": "*{color:blue}#CODE_READY{color}*" },
       { "label": "O que foi alterado/implementado no produto?", "id": "alteracoes", "type": "textarea" },
       { "label": "Por que foi feito?", "id": "motivo", "type": "textarea" },
       { "label": "Alguma API pública foi alterada ou criada?", "id": "api", "type": "boolean" },
