@@ -6,7 +6,8 @@
     "hcm-java-compatibility-bridge-backend",
     "management-training-employee-frontend",
     "management-training-frontend",
-    "management-training-api-test"
+    "management-training-api-test",
+    "onboarding-backend"
   ],
   "commentTemplates": {
     "review_tests": [
@@ -205,9 +206,8 @@
     {"name": "Fernando Mueller", "value": "[~mueller.fernando]"},
     {"name": "Talisia Schmidt", "value": "[~talisia.schmidt]"},
     {"name": "Fabio Paixão", "value": "[~Fabio.Paixao]"},
-    {"name": "Jonas Magalhães", "value": "[~jonas.magalhaes]"},
     {"name": "João Puel", "value": "[~Joao.Puel]"},
-    {"name": "Samuel Ferreira", "value": "[~Samuel.Ferreira]"},
+    {"name": "Leonidas Lima", "value": "[~Leonidas.Lima]"},
     {"name": "José Kaszuba", "value": "[~Jose.Kaszuba]"},
     {"name": "Hiroyuki Nagamini", "value": "[~Hiroyuki.Nagamini]"}
 
