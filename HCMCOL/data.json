@@ -204,10 +204,8 @@
   },
   "mentions": [
     {"name": "Leandro Cabral", "value": "[~Leandro.Cabral]"},
-    {"name": "Leonidas Lima", "value": "[~Leonidas.Lima]"},
     {"name": "Jose Kaszuba", "value": "[~Jose.Kaszuba]"},
     {"name": "Rubens Mette", "value": "[~Rubens.Mette]"},
-    {"name": "Lucas Barth", "value": "[~Lucas.Barth]"},
     {"name": "Hiroyuki Nagamini", "value": "[~Hiroyuki.Nagamini]"},
     {"name": "Jonas Magalhães", "value": "[~jonas.magalhaes]"},
     {"name": "Fabio Paixão", "value": "[~Fabio.Paixao]"}
