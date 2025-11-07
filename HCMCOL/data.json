@@ -27,6 +27,7 @@
       { "label": "Por que foi feito?", "id": "motivo", "type": "textarea" },
       { "label": "Alguma API pública foi alterada ou criada?", "id": "api", "type": "boolean" },
       { "label": "Houve inclusão/alteração/exclusão de campos?", "id": "campos", "type": "textarea" },
+      { "label": "Para tarefas tipo Bug e Erro - Programação, foi adicionado os labels e components?", "id": "bug", "type": "boolean" },
       { "label": "Quais microserviços foram alterados?", "id": "microservicos", "type": "checkbox", "options": "@projetos" },
       { "label": "Rotinas especiais impactadas?", "id": "rotinas", "type": "textarea" },
       { "label": "Gerou alguma conversão/atualização de base?", "id": "base", "type": "textarea" },
